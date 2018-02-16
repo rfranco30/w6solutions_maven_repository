@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.w6</groupId>
+	<artifactId>w6fw-filelayout</artifactId>
+	<version>1.2.4</version>
+	<packaging>jar</packaging>
+
+
+	<name>W6FW File Layout</name>
+	<description></description>
+	<url></url>
+
+	<distributionManagement>
+		<repository>
+			<id>w6solutions-github</id>
+			<name>w6solutions_maven_repository</name>
+			<url>git:master://git@github.com:rfranco30/w6solutions_maven_repository.git</url>
+		</repository>
+	</distributionManagement>
+
+	<parent>
+		<groupId>br.com.w6</groupId>
+		<artifactId>w6fw-pom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+
+		<!-- W6 Framework -->
+		<dependency>
+			<groupId>br.com.w6</groupId>
+			<artifactId>w6fw-base</artifactId>
+			<version>1.0.12</version>
+			<scope>provided</scope> 
+		</dependency>
+
+		<!-- Outras dependencias -->
+		<dependency>
+			<groupId>com.fcoury</groupId>
+			<artifactId>jfilehelpers</artifactId>
+			<version>0.3-20140515</version>
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>/w6fw-filelayout/src/main/resources/jfilehelpers-0.3-20140515.jar</systemPath> -->
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.4</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<extensions>
+			<extension>
+				<groupId>ar.com.synergian</groupId>
+				<artifactId>wagon-git</artifactId>
+				<version>0.2.5</version>
+			</extension>
+		</extensions>
+	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>synergian-repo</id>
+			<url>https://raw.github.com/synergian/wagon-git/releases</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>
